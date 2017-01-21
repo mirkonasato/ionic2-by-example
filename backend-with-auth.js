@@ -5,6 +5,7 @@ const expressJwt = require('express-jwt');
 const bodyParser = require('body-parser');
 const ExpenseService = require('./expense-service');
 
+const PORT = 9999;
 const DB_PATH = './expenses.db';
 const JWT_SECRET = 'bBWYqeeL+FTM45tvwwTXcDtj/nk8G27e';
 
@@ -62,6 +63,6 @@ app.delete('/expenses/:id', (request, response) => {
   response.status(204).send();
 });
 
-app.listen(9999, () => {
-  console.info('app started');
+app.listen(PORT, () => {
+  console.info(`app started on port ${PORT}`);
 });

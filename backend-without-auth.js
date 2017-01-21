@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const ExpenseService = require('./expense-service');
 
+const PORT = 9999;
 const DB_PATH = './expenses.db';
 const USER_ID = 0;  // always use the 'anonymous' user to avoid authentication
 
@@ -47,6 +48,6 @@ app.delete('/expenses/:id', (request, response) => {
   response.status(204).send();
 });
 
-app.listen(9999, () => {
-  console.info('app started');
+app.listen(PORT, () => {
+  console.info(`app started on port ${PORT}`);
 });
