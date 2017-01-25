@@ -39,6 +39,12 @@
     "cordova-plugin-splashscreen",
     "ionic-plugin-keyboard"
   ],
-  "cordovaPlatforms": [],
+  "cordovaPlatforms": [
+    {
+      "platform": "android",
+      "version": "",
+      "locator": "android"
+    }
+  ],
   "description": "love-calculator: An Ionic project"
 }
