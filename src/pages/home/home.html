@@ -8,16 +8,16 @@
   <ion-list>
     <ion-item>
       <ion-label floating>Name 1</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="name1"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating>Name 2</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="name2"></ion-input>
     </ion-item>
   </ion-list>
   <ion-card text-center>
     <ion-card-header>
-      Romeo and Juliet
+      {{ name1 || '???' }} and {{ name2 || '???' }}
     </ion-card-header>
     <ion-card-content class="score">
       99%
