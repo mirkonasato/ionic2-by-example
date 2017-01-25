@@ -17,7 +17,9 @@
   </ion-list>
   <ion-card text-center>
     <ion-card-header>
-      {{ name1 || '???' }} and {{ name2 || '???' }}
+      {{ name1 || '???' }}
+      <ion-icon name="heart" color="danger"></ion-icon>
+      {{ name2 || '???' }}
     </ion-card-header>
     <ion-card-content class="score">
       {{ score }}%
