@@ -9,10 +9,16 @@
     <ion-item>
       <ion-label floating>Name 1</ion-label>
       <ion-input type="text" [(ngModel)]="name1"></ion-input>
+      <button ion-button icon-only clear item-right (click)="picContact1()">
+        <ion-icon name="contact"></ion-icon>
+      </button>
     </ion-item>
     <ion-item>
       <ion-label floating>Name 2</ion-label>
       <ion-input type="text" [(ngModel)]="name2"></ion-input>
+      <button ion-button icon-only clear item-right (click)="picContact2()">
+        <ion-icon name="contact"></ion-icon>
+      </button>
     </ion-item>
   </ion-list>
   <ion-card text-center>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Contacts } from 'ionic-native';
 
 @Component({
   selector: 'page-home',
@@ -16,6 +17,26 @@ export class HomePage {
       sum += letters.charCodeAt(i);
     }
     return sum % 101;
+  }
+
+  picContact1() {
+    Contacts.pickContact()
+      .then(contact => {
+        this.name1 = contact.displayName;
+      })
+      .catch(error => {
+        // ignore; user didn't select a contact
+      });
+  }
+
+  picContact2() {
+    Contacts.pickContact()
+      .then(contact => {
+        this.name2 = contact.displayName;
+      })
+      .catch(error => {
+        // ignore; user didn't select a contact
+      });
   }
 
 }
