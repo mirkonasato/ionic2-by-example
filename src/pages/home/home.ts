@@ -31,4 +31,8 @@ export class HomePage {
 
   constructor(private navCtrl: NavController) { }
 
+  onItemClick(expense) {
+    console.log('item clicked:', expense);
+  }
+
 }

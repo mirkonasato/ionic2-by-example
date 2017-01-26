@@ -6,10 +6,11 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let expense of expenses">
+    <button ion-item *ngFor="let expense of expenses"
+      (click)="onItemClick(expense)">
       <h2>{{ expense.amount | currency:'USD':true }}</h2>
       <p>{{ expense.date | date }} - {{ expense.description }}</p>
       <ion-note item-right>{{ expense.category }}</ion-note>
-    </ion-item>
+    </button>
   </ion-list>
 </ion-content>
