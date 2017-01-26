@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>{{ expense.description }}</ion-title>
+    <ion-title>{{ expense.description || 'New expense' }}</ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="onSave()">
         <ion-icon name="checkmark"></ion-icon>

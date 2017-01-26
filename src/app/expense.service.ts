@@ -2,6 +2,8 @@ import { Expense } from './expense.model';
 
 export class ExpenseService {
 
+  static nextId = 4;
+
   categories = ['Food', 'Travel', 'Other'];
   expenses: Expense[] = [
     {
@@ -26,6 +28,11 @@ export class ExpenseService {
       description: 'Dinner'
     }
   ];
+
+  addExpense(expense: Expense) {
+    expense.id = ExpenseService.nextId++;
+    this.expenses.push(expense);
+  }
 
   getExpense(expenseId: number) {
     const expense = this.expenses.find(it => it.id === expenseId);

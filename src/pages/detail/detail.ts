@@ -17,11 +17,24 @@ export class DetailPage {
               private expenseService: ExpenseService) {
     this.categories = expenseService.categories;
     const expenseId = navParams.get('expenseId');
-    this.expense = expenseService.getExpense(expenseId);
+    if (expenseId) {
+      this.expense = expenseService.getExpense(expenseId);
+    } else {
+      this.expense = {
+        date: '',
+        amount: 0,
+        category: '',
+        description: ''
+      };
+    }
   }
 
   onSave() {
-    this.expenseService.updateExpense(this.expense);
+    if (this.expense.id) {
+      this.expenseService.updateExpense(this.expense);
+    } else {
+      this.expenseService.addExpense(this.expense);
+    }
     this.navCtrl.pop();
   }
 

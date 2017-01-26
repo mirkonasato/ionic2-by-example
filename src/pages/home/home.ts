@@ -19,6 +19,7 @@ export class HomePage {
 
   onAddClick() {
     console.log('add clicked');
+    this.navCtrl.push(DetailPage);
   }
 
   onItemClick(expense: Expense) {
