@@ -33,7 +33,9 @@ export class HomePage {
 
   onItemClick(expense) {
     console.log('item clicked:', expense);
-    this.navCtrl.push(DetailPage);
+    this.navCtrl.push(DetailPage, {
+      expense: expense
+    });
   }
 
 }
