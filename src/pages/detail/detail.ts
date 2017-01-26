@@ -38,4 +38,9 @@ export class DetailPage {
     this.navCtrl.pop();
   }
 
+  onTrash() {
+    this.expenseService.removeExpense(this.expense.id);
+    this.navCtrl.pop();
+  }
+
 }

@@ -2,6 +2,9 @@
   <ion-navbar>
     <ion-title>{{ expense.description || 'New expense' }}</ion-title>
     <ion-buttons end>
+      <button ion-button icon-only (click)="onTrash()" *ngIf="expense.id">
+        <ion-icon name="trash"></ion-icon>
+      </button>
       <button ion-button icon-only (click)="onSave()" [disabled]="!f.valid">
         <ion-icon name="checkmark"></ion-icon>
       </button>
