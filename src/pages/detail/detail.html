@@ -4,5 +4,22 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  To do...
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Date</ion-label>
+      <ion-input type="text" [(ngModel)]="expense.date"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Amount</ion-label>
+      <ion-input type="text" [(ngModel)]="expense.amount"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Category</ion-label>
+      <ion-input type="text" [(ngModel)]="expense.category"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Description</ion-label>
+      <ion-input type="text" [(ngModel)]="expense.description"></ion-input>
+    </ion-item>
+  </ion-list>
 </ion-content>
