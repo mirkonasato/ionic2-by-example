@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { ExpenseService } from '../../app/expense.service';
 
 @Component({
   selector: 'page-detail',
@@ -7,11 +8,13 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class DetailPage {
 
-  categories = ['Food', 'Travel', 'Other'];
+  categories;
   expense;
 
   constructor(private navCtrl: NavController,
-              private navParams: NavParams) {
+              private navParams: NavParams,
+              private expenseService: ExpenseService) {
+    this.categories = expenseService.categories;
     this.expense = navParams.get('expense');
   }
 

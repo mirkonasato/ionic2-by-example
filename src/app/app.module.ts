@@ -1,5 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { ExpenseService } from './expense.service';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { DetailPage } from '../pages/detail/detail';
@@ -18,7 +19,10 @@ import { DetailPage } from '../pages/detail/detail';
     HomePage,
     DetailPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}],
+  providers: [
+    ExpenseService,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ],
   bootstrap: [IonicApp]
 })
 export class AppModule {}
