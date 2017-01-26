@@ -32,4 +32,9 @@ export class ExpenseService {
     return Object.assign({}, expense);
   }
 
+  updateExpense(expense: Expense) {
+    const index = this.expenses.findIndex(it => it.id === expense.id);
+    this.expenses[index] = expense;
+  }
+
 }

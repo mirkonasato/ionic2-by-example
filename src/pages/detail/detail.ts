@@ -20,4 +20,9 @@ export class DetailPage {
     this.expense = expenseService.getExpense(expenseId);
   }
 
+  onSave() {
+    this.expenseService.updateExpense(this.expense);
+    this.navCtrl.pop();
+  }
+
 }
