@@ -2,31 +2,37 @@
   <ion-navbar>
     <ion-title>{{ expense.description || 'New expense' }}</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only (click)="onSave()">
+      <button ion-button icon-only (click)="onSave()" [disabled]="!f.valid">
         <ion-icon name="checkmark"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <ion-list>
-    <ion-item>
-      <ion-label stacked>Date</ion-label>
-      <ion-datetime [(ngModel)]="expense.date"></ion-datetime>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>Amount</ion-label>
-      <ion-input type="number" [(ngModel)]="expense.amount"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>Category</ion-label>
-      <ion-select [(ngModel)]="expense.category">
-        <ion-option *ngFor="let category of categories">{{ category }}</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>Description</ion-label>
-      <ion-input type="text" [(ngModel)]="expense.description"></ion-input>
-    </ion-item>
-  </ion-list>
+  <form #f="ngForm">
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>Date</ion-label>
+        <ion-datetime [(ngModel)]="expense.date"
+          name="date" required></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Amount</ion-label>
+        <ion-input type="number" [(ngModel)]="expense.amount"
+          name="amount"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Category</ion-label>
+        <ion-select [(ngModel)]="expense.category"
+          name="category" required>
+          <ion-option *ngFor="let category of categories">{{ category }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Description</ion-label>
+        <ion-input type="text" [(ngModel)]="expense.description"
+          name="description" required></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
 </ion-content>
