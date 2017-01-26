@@ -1,7 +1,9 @@
+import { Expense } from './expense.model';
+
 export class ExpenseService {
 
   categories = ['Food', 'Travel', 'Other'];
-  expenses = [
+  expenses: Expense[] = [
     {
       date: '2016-01-01',
       amount: 7.25,
