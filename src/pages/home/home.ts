@@ -17,6 +17,10 @@ export class HomePage {
     this.expenses = expenseService.expenses;
   }
 
+  onAddClick() {
+    console.log('add clicked');
+  }
+
   onItemClick(expense: Expense) {
     console.log('item clicked:', expense);
     this.navCtrl.push(DetailPage, {
