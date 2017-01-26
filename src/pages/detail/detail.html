@@ -15,7 +15,9 @@
     </ion-item>
     <ion-item>
       <ion-label stacked>Category</ion-label>
-      <ion-input type="text" [(ngModel)]="expense.category"></ion-input>
+      <ion-select [(ngModel)]="expense.category">
+        <ion-option *ngFor="let category of categories">{{ category }}</ion-option>
+      </ion-select>
     </ion-item>
     <ion-item>
       <ion-label stacked>Description</ion-label>

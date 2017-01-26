@@ -7,6 +7,7 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class DetailPage {
 
+  categories = ['Food', 'Travel', 'Other'];
   expense;
 
   constructor(private navCtrl: NavController,
