@@ -5,5 +5,11 @@
 </ion-header>
 
 <ion-content padding>
-  To do...
+  <ion-list>
+    <ion-item *ngFor="let expense of expenses">
+      <h2>{{ expense.amount }}</h2>
+      <p>{{ expense.date }} - {{ expense.description }}</p>
+      <ion-note item-right>{{ expense.category }}</ion-note>
+    </ion-item>
+  </ion-list>
 </ion-content>
