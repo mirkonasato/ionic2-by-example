@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { Expense } from '../../app/expense.model';
 import { ExpenseService } from '../../app/expense.service';
 
@@ -12,7 +12,8 @@ export class DetailPage {
   categories: string[];
   expense: Expense;
 
-  constructor(private navCtrl: NavController,
+  constructor(private alertCtrl: AlertController,
+              private navCtrl: NavController,
               private navParams: NavParams,
               private expenseService: ExpenseService) {
     this.categories = expenseService.categories;
@@ -39,8 +40,21 @@ export class DetailPage {
   }
 
   onTrash() {
-    this.expenseService.removeExpense(this.expense.id);
-    this.navCtrl.pop();
+    let confirm = this.alertCtrl.create({
+      title: 'Delete',
+      message: `Are you sure you want to delete this expense: "${this.expense.description}"?`,
+      buttons: [
+        { text: 'Cancel', },
+        {
+          text: 'Confirm',
+          handler: () => {
+            this.expenseService.removeExpense(this.expense.id);
+            this.navCtrl.pop();
+          }
+        }
+      ]
+    });
+    confirm.present();
   }
 
 }
