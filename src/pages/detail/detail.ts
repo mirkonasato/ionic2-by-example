@@ -16,7 +16,8 @@ export class DetailPage {
               private navParams: NavParams,
               private expenseService: ExpenseService) {
     this.categories = expenseService.categories;
-    this.expense = navParams.get('expense');
+    const expenseId = navParams.get('expenseId');
+    this.expense = expenseService.getExpense(expenseId);
   }
 
 }

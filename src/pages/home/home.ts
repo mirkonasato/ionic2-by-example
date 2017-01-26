@@ -20,7 +20,7 @@ export class HomePage {
   onItemClick(expense: Expense) {
     console.log('item clicked:', expense);
     this.navCtrl.push(DetailPage, {
-      expense: expense
+      expenseId: expense.id
     });
   }
 
